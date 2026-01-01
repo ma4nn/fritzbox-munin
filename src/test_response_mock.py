@@ -30,6 +30,8 @@ class ResponseMock: # pylint: disable=too-few-public-methods
       file_name = "energy_data_lua.json"
     elif 'data.lua' in url and kwargs['data']['page'] == 'dslStat':
       file_name = "dsl_data_lua.json"
+    elif 'data.lua' in url and kwargs['data']['page'] == 'chan':
+      file_name = "chan_data_lua.json"
     elif 'data.lua' in url:
       mock_response.text = "{'data': {}}"
 

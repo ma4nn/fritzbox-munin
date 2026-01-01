@@ -49,4 +49,6 @@ class FritzboxFileSession:
       return session_id
 
   def clear(self):
-    os.remove(get_session_dir() + '/' + self.__get_session_filename())
+    filename = get_session_dir() + '/' + self.__get_session_filename()
+    if os.path.exists(filename):
+      os.remove(filename)

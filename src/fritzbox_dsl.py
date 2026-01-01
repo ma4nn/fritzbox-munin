@@ -26,7 +26,7 @@ from fritzbox_config import create_fritz_connection
 from fritzbox_interface import FritzboxInterface
 from fritzbox_munin_plugin_interface import MuninPluginInterface, main_handler, print_debug
 
-# @todo refactor
+# @todo refactor to use the TR-064 protocol with fritzconnection
 
 PAGE = 'data.lua'
 PARAMS = {'xhr': 1, 'lang': 'de', 'page': 'dslStat', 'xhrId': 'refresh', 'useajax': 1, 'no_sidrenew': None}

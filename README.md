@@ -10,7 +10,7 @@ So far the following FRITZ!Box models have been confirmed working:
 | Model            | Fritz!OS Version(s) |
 |------------------|---------------------|
 | FritzBox 7590    | 7.28 - 7.57         |
-| FritzBox 7530 AX | 7.80 - 8.02         |
+| FritzBox 7530 AX | 7.80 - 8.20         |
 
 If you are using the scripts on a different FRITZ!Box model please let me know by
 
@@ -25,7 +25,7 @@ use of the more modern APIs that Fritz!OS 7 provides.
 The main differences to the original version are:
 - Compatibility with latest Fritz!OS version using username/password authentication
 - No HTML scraping
-- All data is fetched either through the TR-064 interface or the JSON API
+- All data is fetched through the TR-064 interface preferably (or the JSON API)
 - Contrary to the original version this fork uses multigraphs: this removes the need to query the same API endpoint multiple times, all multigraph plugins have configuration options to switch individual graphs on and off
 - Support for Smart Home devices, e.g. for measuring temperature
 - Complete refactoring of the Python code base to make it more robust, use modern language features like type hinting, tests and remove code duplication
