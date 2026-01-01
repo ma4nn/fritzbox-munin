@@ -42,7 +42,7 @@ The main differences to the original version are:
 ### Connection Uptime
 Plugin: `fritzbox_connection_uptime.py`  
 Shows the WAN connection uptime.  
-![Connection Uptime](doc/connection_uptime.png)
+![Connection Uptime](docs/connection_uptime.png)
 
 ### DSL Errors
 Plugin: `fritzbox_dsl.py`  
@@ -69,7 +69,7 @@ Multigraph plugin, showing:
  - power values
  - energy consumption values
 
-![Smart Home Temperature](doc/smart_home_temperature.png)
+![Smart Home Temperature](docs/smart_home_temperature.png)
 
 ### Energy
 Plugin: `fritzbox_energy.py`  
