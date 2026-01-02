@@ -24,8 +24,18 @@ class FritzboxConfig:
       self.server = str(os.getenv('fritzbox_ip'))
     if os.getenv('fritzbox_port'):
       self.port = int(os.getenv('fritzbox_port'))
-    self.user = str(os.getenv('fritzbox_user'))
-    self.password = str(os.getenv('fritzbox_password'))
+
+    user_env = os.getenv('fritzbox_user')
+    password_env = os.getenv('fritzbox_password')
+
+    if user_env is None or user_env == 'None':
+      raise ValueError("fritzbox_user environment variable must be set")
+    if password_env is None or password_env == 'None':
+      raise ValueError("fritzbox_password environment variable must be set")
+
+    self.user = str(user_env)
+    self.password = str(password_env)
+
     if os.getenv('fritzbox_certificate') and os.path.isfile(os.getenv('fritzbox_certificate')):
       self.certificate_file = str(os.getenv('fritzbox_certificate'))
     elif os.path.isfile(str(os.getenv('MUNIN_CONFDIR')) + '/box.cer'):
