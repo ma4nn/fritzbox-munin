@@ -3,7 +3,7 @@
 ![build status](https://github.com/ma4nn/fritzbox-munin-fast/actions/workflows/verify-plugin-scripts.yml/badge.svg)
 
 A collection of [Munin](https://munin-monitoring.org) plugins to monitor your [AVM FRITZ!Box](https://avm.de/produkte/fritzbox/) router.  
-The values are retrieved via the [fritzconnection](https://pypi.org/project/fritzconnection/) project.
+The values are retrieved via the [fritzconnection](https://pypi.org/project/fritzconnection/) project (TR-064 interface).
 
 So far the following FRITZ!Box models have been confirmed working:
 
@@ -105,7 +105,7 @@ Multigraph plugin, showing for 2.4GHz and 5GHz
 1. (optional) If you want to connect to FRITZ!Box using SSL, download the Fritz certificate (web interface: _Internet → Freigaben → FritzBox Dienste → Zertifikat → Zertifikat herunterladen_) and save it to `/etc/munin/box.cer`.
    The certificate might change after a FRITZ!Box Update.
 
-1. Create entry in `/etc/munin/plugin-conf.d/munin-node`:
+1. Create entry in `/etc/munin/plugin-conf.d/fritzbox`:
 
         [fritzbox_*]
         env.fritzbox_user <fritzbox_user>
@@ -117,7 +117,7 @@ Multigraph plugin, showing for 2.4GHz and 5GHz
 
 1. For each plugin you want to activate, create a symbolic link to `/etc/munin/plugins` and make it executable, e.g.:
    ```
-   ln -s fritzbox_dsl.py /etc/munin/plugins/fritzbox_dsl.py && chmod +x /etc/munin/plugins/fritzbox_dsl.py
+   ln -s fritzbox_dsl.py /etc/munin/plugins/fritzbox_dsl && chmod +x /etc/munin/plugins/fritzbox_dsl
    ```
 
 1. Restart the munin-node daemon: `service munin-node restart`.
