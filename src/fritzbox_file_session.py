@@ -32,11 +32,12 @@ class FritzboxFileSession:
     statedir = get_session_dir()
 
     if not os.path.exists(statedir):
-      os.makedirs(statedir)
+      os.makedirs(statedir, mode=0o700)
 
     statefilename = statedir + '/' + self.__get_session_filename()
 
-    with open(statefilename, 'w', encoding='utf8') as statefile:
+    fd = os.open(statefilename, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, 'w', encoding='utf8') as statefile:
       statefile.write(session_id)
 
   def load(self) -> Optional[str]:
