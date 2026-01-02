@@ -15,7 +15,7 @@ class FritzboxConfig:
   user = ""
   """the password to log into the Fritzbox webinterface"""
   password = ""
-  use_tls = False
+  use_tls = True
   certificate_file = False
   timeout = 60
 
