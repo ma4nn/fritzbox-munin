@@ -28,6 +28,11 @@ jobs:
     - name: Running tests
       run: |
         uv run pytest --cov
+    - name: Verify requirements.txt is up to date
+      if: ${{ matrix.python-version == '3.14' }}  # Only check once, not for every Python version
+      run: |
+        uv pip compile pyproject.toml -o requirements-check.txt
+        diff requirements.txt requirements-check.txt || (echo "requirements.txt is out of date. Run: uv pip compile pyproject.toml -o requirements.txt" && exit 1)
     - name: Archive production artifacts
       if: ${{ matrix.python-version == '3.14' }}  # @see https://devguide.python.org/versions/
       uses: actions/upload-artifact@v6
