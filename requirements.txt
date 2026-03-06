@@ -2,7 +2,7 @@
 #    uv pip compile pyproject.toml -o requirements.txt
 certifi==2026.2.25
     # via requests
-charset-normalizer==3.4.4
+charset-normalizer==3.4.5
     # via requests
 fritzconnection==1.15.1
     # via fritzbox-munin (pyproject.toml)
