@@ -30,7 +30,7 @@ jobs:
         uv run pytest --cov
     - name: Archive production artifacts
       if: ${{ matrix.python-version == '3.14' }}  # @see https://devguide.python.org/versions/
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: fritzbox-munin-plugins
         path: src/fritzbox*.py
