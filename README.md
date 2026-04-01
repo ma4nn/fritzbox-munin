@@ -36,7 +36,7 @@ The main differences to the original version are:
 - FRITZ!Box router with FRITZ!OS >= 7.50 (if you are on an older FRITZ!OS version, select an older version of fritzbox-munin-fast by browsing the tags in this repository)
 - Munin 1.4.0 or later is required
 - Python >= 3.9
-   
+
 ## Available Plugins
 
 ### Connection Uptime
@@ -94,9 +94,9 @@ Multigraph plugin, showing for 2.4GHz and 5GHz
 
 ## Installation & Configuration
 
-1. To install requirements run
+1. Install the required Python packages:
 
-        pip install -r requirements.txt
+        pip install fritzconnection lxml requests
 
 1. Make sure the FRITZ!Box has UPnP status information enabled. (web interface: _Home Network → Network → Network Settings → Universal Plug & Play (UPnP)_)
 
